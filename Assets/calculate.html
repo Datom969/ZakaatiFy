@@ -1,0 +1,356 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-100 text-white">
+  
+   <!--Mobile+Desktop Navbar-->
+<nav class="navbar sticky z-40 top-0 flex justify-between md:justify-start w-full bg-(--Twilight) shadow-lg p-5 items-center content-center text-white cursor-pointer" id="navbar">
+  <div class="flex gap-2 justify-center items-center">  
+    <i class="fa-solid fa-hand-holding-hand fa-xl text-yellow-600 self-center" alt="hand-holding-hand"></i>
+    <h1 class="font-bold text-2xl tracking-tight" id="zakaatiFy">ZakaatiFy</h1>
+  </div>
+    <ul class="hidden lg:flex bold gap-10 m-auto text-sm">
+      <li onclick="location.href='index.html'"class="px-3 hover:transition-transform duration-500 ease-out hover:scale-110"><i class="fa-solid fa-house mr-2" alt="home-icon"></i>Home</li>
+      <li class="px-3 hover:transition-transform duration-500 ease-out hover:scale-110" onclick="location.href=''">About</li>
+     <li class="px-3 hover:transition-transform duration-500 ease-out hover:scale-110" onclick="location.href='index.html/#nisabValues'"> Nisab</li>
+     <li class="px-3 hover:transition-transform duration-500 ease-out active:scale-102">Contact us</li>  
+    </ul>
+    <div class="md:hidden">
+    <i class="fa-solid fa-bars-staggered" alt="menu-icon" id="menuIcon"></i>
+    </div>
+</nav>
+<!--Mobile nav -->
+<section id="mobileNav"
+  class="fixed inset-0 z-60 w-full min-h-screen bg-(--Twilight)
+         transform translate-x-full transition-transform duration-300 ease-in-out"
+>
+  <!-- Top bar -->
+  <div class="flex items-center justify-between px-4 pt-6">
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <i class="fa-solid fa-hand-holding-hand fa-xl text-yellow-600"></i>
+      <h1 class="font-bold text-2xl tracking-tight" id="zakaatiFy">
+        ZakaatiFy
+      </h1>
+    </div>
+
+    <!-- Close icon -->
+    <button id="closeIcon" aria-label="Close menu">
+      <i class="fa-solid fa-circle-xmark fa-2xl text-white"></i>
+    </button>
+  </div>
+  <div class="border-t border-white/20 mt-6"></div>
+
+  <!-- Navigation links -->
+  <nav class="flex flex-col items-center justify-center mt-16">
+    <ul class="flex flex-col gap-10 text-white font-bold tracking-wide text-lg text-center">
+      <li onclick="location.href='index.html'" class="cursor-pointer">
+        <i class="fa-solid fa-house mr-2"></i>Home
+      </li>
+      <li class="cursor-pointer">About</li>
+      <li onclick="location.href='nisabValues'" class="cursor-pointer">
+        Nisāb
+      </li>
+      <li class="cursor-pointer">Contact us</li>
+    </ul>
+  </nav>
+</section>
+
+<!--Hero section-->
+<section class="flex flex-col lg:flex-row w-full bg-cover lg:justify-between">
+  <img src="/Assets/images/zakaat.jpg" alt="zakaat-img" 
+  class="w-full lg:w-[30%] h-auto mt-8 lg:justify-self-start">
+  <section class="bg-(--Twilight) lg:w-[70%]">
+  <div class="flex flex-col">
+    <div class="m-auto px-3 pt-8 text-center">
+      <p id="zakaat" class="zakaat font-bold italic text-xl lg:text-3xl tracking-tighter inline-block"
+    >Zakaat simplified — Calculate with confidence!</p>
+    <div class="my-2 h-1 w-35 rounded-full bg-linear-to-r from-white to-(--Twilight) m-auto"></div>  
+    </div>
+  <div class="flex justify-center self-center mx-4 px-3 md:px-8 mt-2 mb-6 md:w-[60%] text-center"><p class="leading-tight italic text-sm antialiased" id="quote">..And whatever good you put forward for yourselves you will find it with Allah (Al-Baqorah:110).</p>
+  </div>
+  <div class= "NisabCard flex flex-col justify-center self-center p-4 mb-8 font-bold lg:w-[70%] w-[95%] lg:h-[20vh] rounded-xl bg-white text-(--Twilight) hover:transition-transform duration-500 ease-out md:hover:scale-105 shadow-lg">
+    <div class="flex flex-col md:flex-row md:justify-between lg:pr-12 lg:space-y-2">
+    <div class="flex gap-2"><i class="fa-solid fa-calendar"></i><span id="date" class="text-(--Twilight)"></span></div>
+    <div class="flex gap-2"><i class="fa-solid fa-calendar"></i><span id="hijriDate" class=" text-(--Twilight)"></span></div>
+  </div>
+  <div class="flex flex-col md:flex-row md:justify-between lg:pr-12"><div class="flex gap-2"><i class="fa-solid fa-calculator text-(--Twilight) self-center"></i><p>Nisab Basis: Silver-595g, Gold-85g<span id="nisabToday"></span></p></div>
+    <div class="flex gap-2"><i class="fa-solid fa-arrows-rotate"></i><p>USD/NGN:<span id="UsdNgn"></span></p></div>
+  </div>
+</div>
+</div>
+</section>
+</section><main class="flex flex-col mt-6">
+  <label class="text-(--Twilight) font-bold m-auto mb-2">Select Madhhab</label>
+ <div class="flex justify-center w-full">
+  <select required id="selectMadh"
+    class="font-bold p-2 bg-(--rose) text-(--Twilight)
+           outline-0 border border-(--Twilight)
+           w-[90%] max-w-xs sm:max-w-sm text-center">
+    <option value="Hanafi">Hanafi</option>
+    <option value="Shafii">Shafi'i (and others)</option>
+  </select>
+</div>
+
+<section>
+     <form id="zakaatForm" class="space-y-6 w-[95%] lg:max-w-3xl mx-auto mt-4">
+     <!-- Cash & Bank -->
+      <section class="zakaatPage silver" data-page="Hanafi">
+        
+      <div class="flex flex-col justify-center items-center text-(--Twilight) mt-4 p-4">
+        <p class="underline underline-offset-2 font-bold">Base on Imam Hanafi's Madhhab</p><p class="italic text-small"><i class="fa-solid fa-coins fa-xl text-gray-400 mr-2"></i>(Silver price based Zakaat)</p><p class="italic text-sm">Note that according to the Hanafi madhhab, gold jewelleries worn for personal use are subjected to Zakaat</p>
+          </div>
+
+      <section class=" flex flex-col md:flex-row justify-center items-center text-(--Twilight) gap-8 md:gap-16">
+        <div>
+        <h3 class="font-bold text-lg mb-2">Cash & Bank Balances</h3>
+    
+        <input type="number" placeholder="Cash at home" class=" assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Savings account balance" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Current account balance" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Mobile wallets (Opay, PalmPay, etc.)" class="assetInput w-full p-2 border rounded mb-2">
+        </div>
+    
+      <!-- Gold -->
+      <div>
+        <h3 class="font-bold text-lg mb-2">Gold Assets</h3>
+    
+        <input type="number" placeholder="Gold weight (grams)" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Gold value (if known)" class="assetInput w-full p-2 border rounded mb-2">
+    
+        <div class="w-full p-2 border rounded text-sm font-bold">
+          Include personal use gold jewellery. 
+        </div>
+      </div>
+      </section>
+    
+      <!-- Silver -->
+      <section class="flex flex-col md:flex-row justify-center items-center text-(--Twilight) gap-8 md:gap-16">
+        <div>
+        <h3 class="font-bold text-lg mb-2">Silver Assets</h3>
+    
+        <input type="number" placeholder="Silver weight (grams)" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Silver value (if known)" class="assetInput w-full p-2 border rounded mb-2">
+        </div>
+    
+      <!-- Investments -->
+      <div>
+        <h3 class="font-bold text-lg mb-2">Investments</h3>
+    
+        <input type="number" placeholder="Stocks & shares value" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Crypto assets value" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Mutual funds / ETFs" class="assetInput w-full p-2 border rounded mb-2">
+      </div>
+      </section>
+    
+      <!-- Business Assets -->
+      <section class="flex flex-col md:flex-row justify-center items-center text-(--Twilight) gap-8 md:gap-16">
+        <div>
+        <h3 class="font-bold text-lg mb-2">Business Assets</h3>
+    
+        <input type="number" placeholder="Business cash" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Stock / inventory value" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Money owed to you (receivables)" class="assetInput w-full p-2 border rounded mb-2">
+        </div>
+    
+      <!-- Liabilities -->
+      <div>
+        <h3 class="font-bold text-lg mb-2">Liabilities (Deductible)</h3>
+    
+        <input type="number" placeholder="Short-term debts" class=" liabilityInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Bills due within a year" class=" liabilityInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Outstanding loans (current year)" class="liabilityInput w-full p-2 border rounded mb-2">
+      </div>
+      </section>
+    
+      <section class=" flex flex-col md:flex-row justify-center text-(--Twilight) gap-5 md:gap-16 mt-4 flex-wrap">
+        <div class="bg-(--rose) h-10 flex justify-start items-center p-2 flex-[1_0_auto]">
+          <p class="font-bold lg:text-lg">Your net worth: ₦ <span class="netValue"></span></p>
+        </div>
+    
+      <!--Currency -->
+      <div class="bg-(--rose) h-10 flex justify-start items-center p-2 flex-[1_0_auto] ">
+       <p class="font-bold text-lg">Nisab: <span id="silverNisab"></span></p>
+      </div>
+      </section>
+    
+      <!-- Submit -->
+      <div class="flex justify-center my-4">
+      <button
+        type="submit"
+        class="w-[80%] p-3 font-bold text-white bg-(--Twilight) md:max-w-lg">
+        Calculate Zakaat
+      </button>
+      </div>
+      </section>
+      
+
+      <!--For Shafii and Others-->
+      <section class="zakaatPage hidden" data-page="Shafii">
+
+        <div class="flex flex-col justify-center items-center text-(--Twilight) mt-4 p-4">
+          <p class="underline underline-offset-2 font-bold">Base on Imam Shafi'i, Maliki and Hanbali's  Madhhab</p><p class="italic text-small"><i class="fa-solid fa-coins fa-xl text-yellow-600 mr-2"></i>(Gold price based Zakaat)</p><p class="italic text-sm">Note that according to this madhhab, gold jewelleries for personal use are not subjected to Zakaat</p>
+            </div>
+            
+            <section class="flex flex-col md:flex-row justify-center items-center text-(--Twilight) gap-8 md:gap-16 ">
+        <div>
+        <h3 class="font-bold text-lg mb-2">Cash & Bank Balances</h3>
+    
+        <input type="number" placeholder="Cash at home" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Savings account balance" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Current account balance" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Mobile wallets (Opay, PalmPay, etc.)" class="assetInput w-full p-2 border rounded mb-2">
+        </div>
+    
+      <!-- Gold -->
+      <div>
+        <h3 class="font-bold text-lg mb-2">Gold Assets</h3>
+    
+        <input type="number" placeholder="Gold weight (grams)" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Gold value (if known)" class="assetInput w-full p-2 border rounded mb-2">
+    
+        <div class="w-full p-2 border rounded text-sm font-bold">
+          Only gold for business purposes.  
+        </div>
+      </div>
+      </section>
+    
+      <!-- Silver -->
+      <section class=" flex flex-col md:flex-row justify-center items-center text-(--Twilight) gap-8 md:gap-16">
+        <div>
+        <h3 class="font-bold text-lg mb-2">Silver Assets</h3>
+    
+        <input type="number" placeholder="Silver weight (grams)" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Silver value (if known)" class="assetInput w-full p-2 border rounded mb-2">
+        </div>
+    
+      <!-- Investments -->
+      <div>
+        <h3 class="font-bold text-lg mb-2">Investments</h3>
+    
+        <input type="number" placeholder="Stocks & shares value" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Crypto assets value" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Mutual funds / ETFs" class="assetInput w-full p-2 border rounded mb-2">
+      </div>
+      </section>
+    
+      <!--  Business Assets -->
+      <section class=" flex flex-col md:flex-row justify-center items-center text-(--Twilight) gap-8 md:gap-16">
+        <div>
+        <h3 class="font-bold text-lg mb-2">Business Assets</h3>
+    
+        <input type="number" placeholder="Business cash" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Stock / inventory value" class="assetInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Money owed to you (receivables)" class="assetInput w-full p-2 border rounded mb-2">
+        </div>
+    
+      <!-- Liabilities -->
+      <div>
+        <h3 class="font-bold text-lg mb-2">Liabilities (Deductible)</h3>
+    
+        <input type="number" placeholder="Short-term debts" class="liabilityInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Bills due within a year" class="liabilityInput w-full p-2 border rounded mb-2">
+        <input type="number" placeholder="Outstanding loans (current year)" class="liabilityInput w-full p-2 border rounded mb-2">
+      </div>
+      </section>
+    
+      <!--  NetWorth -->
+      <section class=" flex flex-col md:flex-row justify-center text-(--Twilight) gap-5 md:gap-16 mt-4 flex-wrap">
+        <div class="bg-(--rose) h-10 flex justify-start items-center p-2 flex-[1_0_auto]">
+          <p class="font-bold lg:text-lg">Your net worth: ₦ <span class="netValue"></span></p>
+        </div>
+    
+      <!--Currency -->
+      <div class="bg-(--rose) h-10 flex justify-start items-center p-2 flex-[1_0_auto] ">
+       <p class="font-bold text-lg">Nisab: <span id="silverNisab"></span></p>
+      </div>
+      </section>
+    <!-- Submit -->
+      <div class="flex justify-center my-4">
+      <button
+        type="submit"
+        class="w-[80%] p-3 font-bold text-white bg-(--Twilight) md:max-w-lg">
+        Calculate Zakaat
+      </button>
+      </div>
+      </section>
+      </form>
+</section>
+</main>
+ <!--Footer-->
+ <footer class="w-full bg-(--Twilight) mt-12 text-white">
+  
+  <!-- Main Footer Content -->
+  <div class="mx-auto max-w-6xl px-6 py-10 flex flex-col gap-10 lg:flex-row lg:justify-between">
+
+    <!-- Brand -->
+    <div class="flex flex-col gap-4 lg:max-w-sm">
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-hand-holding-hand fa-xl text-yellow-600"></i>
+        <h1 class="font-bold text-2xl tracking-tight" id="zakaatiFy">
+          ZakaatiFy
+        </h1>
+      </div>
+      <p class="text-sm leading-relaxed text-white/90">
+        Helping Muslims fulfil their Zakaat obligations with clarity, ease, and confidence, in accordance with Shariah principles.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="flex flex-col gap-3">
+      <span class="uppercase text-sm font-semibold tracking-wide">
+        Quick Links
+      </span>
+      <div class="h-1 w-12 rounded-full bg-linear-to-r from-white to-transparent"></div>
+
+      <a href="index.html" class="hover:underline underline-offset-3">Home</a>
+      <a href="#" class="hover:underline underline-offset-3">Nisab</a>
+      <a href="#" class="hover:underline underline-offset-3">About</a>
+    </div>
+
+    <!-- Contact -->
+    <div class="flex flex-col gap-3">
+      <span class="uppercase text-sm font-semibold tracking-wide">
+        Contact Us
+      </span>
+      <div class="h-1 w-12 rounded-full bg-linear-to-r from-white to-transparent"></div>
+
+      <div class="flex gap-4 mt-2">
+        <a href="#" aria-label="Facebook">
+          <i class="fa-brands fa-square-facebook fa-xl hover:text-yellow-400 transition-colors"></i>
+        </a>
+        <a href="#" aria-label="Twitter / X">
+          <i class="fa-brands fa-x-twitter fa-xl hover:text-yellow-400 transition-colors"></i>
+        </a>
+        <a href="mailto:wasiu_mustapha96@yahoo.com" aria-label="Send us an email">
+          <i class="fa-regular fa-envelope fa-xl hover:text-yellow-400 transition-colors" aria-hidden="true"></i>
+        </a>
+        
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Divider -->
+  <div class="border-t border-white/20"></div>
+
+  <!-- Disclaimer -->
+  <div class="mx-auto max-w-6xl px-6 py-6 text-xs text-white/80 leading-relaxed">
+    <p class="text-center">
+      <strong>Disclaimer:</strong>  ZakaatiFy provides estimates based on user inputs and current market data. <strong>It is not a fatwa. </strong>For complex cases, consult a qualified scholar. </p>
+<span class="flex gap-1 mt-3 justify-center items-center"><i class="fa-regular fa-copyright"></i><p>ZakaatiFy. All rights reserved.</p></span>
+
+<script src="/Assets/zakaat.js"></script>
+</body>  
+</html>

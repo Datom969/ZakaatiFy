@@ -1,0 +1,136 @@
+# ZakaatiFy 🧮🌙
+
+**ZakaatiFy** is a personal **portfolio project** focused on building a modern, user-friendly Zakat calculation experience that helps Muslims understand and calculate their Zakat obligations with clarity, confidence, and peace of mind.
+
+The project is currently in **MVP stage**, with most of the core frontend experience already implemented and actively evolving.
+
+---
+
+## ✨ Project Intent
+
+Zakat is an act of worship rooted in precision, trust, and intention. ZakaatiFy aims to:
+
+* Remove confusion around Zakat calculations
+* Present financial inputs and outputs clearly and transparently
+* Respect different scholarly opinions (e.g. Nisab differences)
+* Feel calm, dignified, and trustworthy — not overwhelming
+
+---
+
+## 🚧 Project Status (MVP)
+
+This repository contains an **in-progress MVP built as a portfolio project**.
+
+### ✅ What’s Implemented
+
+* **Homepage**
+
+  * Clear value proposition
+  * Educational content around Zakat and Nisab
+
+* **Calculation / Data Entry Page**
+
+  * Structured inputs for assets and liabilities
+  * Real-time calculation logic on the frontend
+
+* **Live Net Worth Display**
+
+  * User’s net worth updates instantly as values are entered
+  * Designed to give immediate feedback and clarity
+
+* **Frontend Architecture**
+
+  * Modular, clean, and scalable structure
+  * Accessibility and UX considered from the start
+
+> Roughly **70% of the frontend** is completed at this stage.
+
+---
+
+###  What’s Not Implemented Yet
+
+These features are intentionally pending due to external dependencies:
+
+* **Gold & Silver Price API Integration**
+
+  * Live Nisab values (gold & silver) not yet fetched
+  * Backend work is blocked until a reliable API is finalized
+
+* **Backend Logic**
+
+  * Zakat eligibility confirmation
+  * Persistent calculations / summaries
+
+* **Confirmation Page**
+
+  * Final Zakat due breakdown
+  * Payment guidance and next steps
+
+---
+
+## Why the Backend Is Paused
+
+Zakat calculations rely heavily on **accurate, up-to-date Nisab values**.
+
+Until a stable and trustworthy **gold & silver pricing API** is integrated:
+
+* Backend calculations would be incomplete
+* Final confirmation would risk inaccuracies
+
+For this reason, development is proceeding **frontend-first**, ensuring the user experience and calculation flow are solid before locking in backend logic.
+
+---
+
+## 🛠 Tech Stack
+
+> Subject to refinement as the project evolves
+
+* **HTML / CSS / JavaScript**
+* **Tailwind CSS** for styling
+* **Vanilla JS** for calculation logic (MVP stage)
+* Planned backend: **Firebase / Node.js** (not yet active)
+
+---
+
+## 📌 Learning & Development Roadmap
+
+High-level next steps:
+
+1. Integrate reliable gold & silver price API
+2. Implement backend calculation logic
+3. Build confirmation & summary page
+4. Add scholarly context (Nisab explanations, Madhhab views)
+5. Improve validation, accessibility, and edge-case handling
+6. Prepare for beta release
+
+---
+
+## Feedback
+
+This project is still in its early stages.
+
+Thoughtful feedback is welcome — especially around:
+
+* Zakat calculation accuracy
+* UX clarity for financial inputs
+* API recommendations for precious metals pricing
+
+Please open an issue or discussion before submitting major changes.
+
+---
+
+## ⚠️ Disclaimer
+
+ZakaatiFy is **not a replacement for scholarly advice**.
+
+While the goal is accuracy and transparency, users are encouraged to consult qualified scholars for personal or complex Zakat situations.
+
+---
+
+## Closing Note
+
+ZakaatiFy is being built with care, intention, and respect for the weight of Zakat as an obligation.
+
+This MVP represents the foundation — more refinement, verification, and polish will follow, in shā’ Allāh.
+
+This project is part of my growing frontend and web application portfolio. Feedback is always appreciated.

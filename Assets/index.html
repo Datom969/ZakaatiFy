@@ -1,0 +1,380 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-100 text-white">
+  
+    <!--Mobile+Desktop Navbar-->
+<nav class="navbar sticky z-40 top-0 flex justify-between lg:justify-start w-full bg-(--Twilight) shadow-lg p-5 items-center text-white cursor-pointer" id="navbar">
+  <div class="flex gap-2 justify-center items-center"> 
+    <i class="fa-solid fa-hand-holding-hand fa-xl text-yellow-600 self-center" alt="hand-holding-hand"></i>
+    <h1 class="font-bold text-2xl tracking-tight" id="zakaatiFy">ZakaatiFy</h1>
+  </div>
+    <ul class="hidden lg:flex bold gap-12 m-auto text-sm">
+      <li onclick="location.href='index.html'"class="hover:transition-transform duration-500 ease-out hover:scale-110"><i class="fa-solid fa-house mr-2" alt="home-icon"></i>Home</li>
+      <li class="hover:transition-transform duration-500 ease-out hover:scale-110" onclick="location.href=''">About</li>
+     <li class="hover:transition-transform duration-500 ease-out hover:scale-110" onclick="location.href='index.html/#nisabValues'"> Nisab</li>
+     <li class="hover:transition-transform duration-500 ease-out hover:scale-110">Contact us</li>  
+    </ul>
+    <div class="lg:hidden">
+    <i class="fa-solid fa-bars-staggered" alt="menu-icon" id="menuIcon"></i>
+    </div>
+</nav>
+<!--Mobile nav -->
+<section id="mobileNav"
+  class="fixed inset-0 z-60 w-full min-h-screen bg-(--Twilight)
+         transform translate-x-full transition-transform duration-300 ease-in-out"
+>
+  <!-- Top bar -->
+  <div class="flex items-center justify-between px-4 pt-6">
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <i class="logo fa-solid fa-hand-holding-hand fa-xl text-yellow-600"></i>
+      <h1 class="font-bold text-2xl tracking-tight" id="zakaatiFy">
+        ZakaatiFy
+      </h1>
+    </div>
+
+    <!-- Close icon -->
+    <button id="closeIcon" aria-label="Close menu">
+      <i class="fa-solid fa-circle-xmark fa-2xl text-white"></i>
+    </button>
+  </div>
+  <div class="border-t border-white/20 mt-6"></div>
+
+  <!-- Navigation links -->
+  <nav class="flex flex-col items-center justify-center mt-16">
+    <ul class="flex flex-col gap-10 text-white font-bold tracking-wide text-lg text-center">
+      <li onclick="location.href='index.html'" class="cursor-pointer">
+        <i class="fa-solid fa-house mr-2"></i>Home
+      </li>
+      <li class="cursor-pointer">About</li>
+      <li onclick="location.href='nisabValues'" class="cursor-pointer">
+        Nisāb
+      </li>
+      <li class="cursor-pointer">Contact us</li>
+    </ul>
+  </nav>
+</section>
+
+<!--Hero section-->
+<section class="flex flex-col lg:flex-row w-full bg-cover lg:justify-between">
+  <img src="/Assets/images/zakaat.jpg" alt="zakaat-img" 
+  class="w-full lg:w-[30%] h-auto">
+  <section class="bg-(--Twilight) lg:w-[70%]">
+    <div class="flex flex-col">
+    <div class="m-auto px-3 pt-8 text-center">
+      <h2 id="zakaat" class="zakaat font-bold italic text-xl lg:text-3xl tracking-tighter inline-block text-(--stone)"
+    >Zakaat simplified — Calculate with confidence!</h2>
+    <div class="my-2 h-1 w-35 rounded-full bg-linear-to-r from-white to-(--Twilight) m-auto"></div>  
+    </div>
+    <div class="flex justify-center self-center mx-4 px-3 md:px-8 mt-2 mb-6 md:w-[60%] text-center"><p class="leading-tight italic text-sm antialiased" id="quote">..And whatever good you put forward for yourselves you will find it with Allah (Al-Baqorah:110).</p>
+    </div>
+    <div class= "NisabCard flex flex-col justify-center self-center p-4 mb-8 font-bold lg:w-[70%] w-[95%] lg:h-[20vh] rounded-xl bg-white hover:transition-transform duration-500 ease-out md:hover:scale-105 shadow-lg">
+      <div class="flex flex-col md:flex-row md:justify-between lg:pr-12 lg:space-y-2">
+      <div class="flex gap-2"><i class="fa-solid fa-calendar"></i><span id="date" class="text-(--Twilight)"></span></div>
+      <div class="flex gap-2"><i class="fa-solid fa-calendar"></i><span id="hijriDate" class=" text-(--Twilight)"></span></div>
+    </div>
+    <div class="flex flex-col md:flex-row md:justify-between lg:pr-12"><div class="flex gap-2"><i class="fa-solid fa-calculator text-(--Twilight) self-center"></i><p>Nisab Basis: Silver-595g, Gold-85g<span id="nisabToday"></span></p></div>
+      <div class="flex gap-2"><i class="fa-solid fa-arrows-rotate"></i><p>USD/NGN:<span id="UsdNgn"></span></p></div>
+    </div>
+  </div>
+  </div>
+  </section>
+</section>
+
+<!--Main content-->
+<main class="flex flex-col">
+<div class="flex gap-2 bg-(--rose) text-(--Twilight) justify-center content-center self-center  italic w-[85%] md:w-[30vw] mt-4 p-2 rounded-2xl">
+  <img src="/Assets/images/users.svg" alt="trust-icon" class="w-5 h-5 text-(--Twilight)">
+  <span id="reaching" class="text-sm">Reaching 1000+ users in Nigeria</span>
+</div>
+<div class="calculate flex justify-around items-center mt-4 pb-6">
+<button onclick="location.href='calculate.html'" class="py-2 px-4 content-center rounded-xl font-bold bg-(--Twilight) hover:bg-(--rose) text-(--white) hover:text-(--Twilight) hover:transition-all duration-500 ease-in-out border shadow-lg border-b border-(--Twilight)"><i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>Calculate Zakaat</button>
+<button onclick="location.href='#nisabValues'" class="py-2 px-4 content-center rounded-xl font-bold bg-(--rose) hover:bg-(--Twilight) text-(--Twilight) hover:text-white hover:transition-all duration-600 ease-in-out border shadow-lg border-b border-(--Twilight)"><i class="fa-solid fa-eye mr-2"></i>View Nisab</button>
+</div>
+<div class="mt-2 h-0.5 w-[90%] rounded-full bg-gray-300 m-auto mb-6"></div>
+<section class="intro flex flex-col">
+<div class="flex flex-col md:flex-row md:justify-around mt-6 gap-2 items-center justify-center mx-2 ">
+<div class="group cards flex flex-col items-start justify-center rounded-xl shadow-lg border-l-2 border-(--Twilight) w-[95%] md:w-1/4 my-4 p-4 hover:transition-transform duration-500 ease-in-out lg:hover:scale-105">
+ <div class="content-center py-2 px-4 rounded-xl bg-(--rose) text-(--Twilight) shadow-xl mb-2  group-hover:rotate-8 transform transition-transform duration-500 ease-out will-change-transform"><i class="fa-solid fa-shield fa-xl text-(Twilight)"  alt="trusted-icon"></i></div> 
+<p>Trusted Zakaat simplifier that allows you calculate your Zakaat with ease and confidence! </p>
+</div>
+<div class="group cards flex flex-col items-start justify-center rounded-xl shadow-lg border-l-2 w-[95%] md:w-1/4 my-4 p-4 hover:transition-transform duration-500 ease-in-out lg:hover:scale-105">
+  <div class="content-center py-2 px-4 rounded-xl bg-(--rose) text-(--Twilight) shadow-xl mb-2 group-hover:rotate-8 transform transition-transform duration-500 ease-out will-change-transform"><i class="fa-solid fa-circle-check fa-xl" alt="check-icon"></i></div>
+  <p>A smart, faith-aligned Zakaat calculator built for clarity, accuracy, and purpose</p>
+  </div>
+  <div class="group cards flex flex-col items-start justify-center rounded-xl shadow-lg border-l-2 w-[95%] md:w-1/4 my-4 p-4 hover:transition-transform duration-500 ease-in-out lg:hover:scale-105">
+    <div class="content-center py-2 px-4 rounded-xl bg-(--rose) text-(--Twilight) shadow-xl mb-2 group-hover:rotate-8 transform transition-transform duration-500 ease-out will-change-transform"><i class="fa-solid fa-clock fa-xl" alt="clock-icon"></i></div>  
+    <p>Daily Zakaat Nisab update - Cash and savings, gold and silver, to simplify Zakaat for you!</p>
+    </div>
+</div>
+    </section>
+    <section id="nisabValues" class="nisabValues bg-white w-[95%] md:w-[80%] flex flex-col lg:flex-row justify-center items-center m-auto my-5 p-4 border-l-2 border-l-(--Twilight)">
+<div class="flex flex-col bg-(--rose) text-(--Twilight) p-4 m-4 rounded-lg shadow-lg w-full lg:w-[25%] font-bold border-b border-b-(--Twilight)">
+<p>Silver price/gram: <span id="silverPrice"></span></p>
+<p>Silver Nisab: <span id="silverNisab"></span></p>
+</div>
+<div class="flex flex-col bg-(--rose) text-(--Twilight) p-4 m-4 rounded-lg shadow-lg w-full lg:w-[25%] font-bold border-b border-b-(--Twilight)">
+  <p>Gold price/gram: <span id="goldPrice"></span></p>
+  <p>Gold Nisab: <span id="goldNisab"></span></p>
+</div>
+<div class="flex flex-col bg-(--rose) text-(--Twilight) p-4 m-4 rounded-lg shadow-lg w-full lg:w-[35%] font-bold border-b border-b-(--Twilight)">
+  <ul class="space-y-6 relative">
+    <li class="flex items-start gap-4">
+      <span class="dot-line"></span>
+      <p>Know your obligation with clarity</p>
+    </li>
+  
+    <li class="flex items-start gap-4">
+      <span class="dot-line"></span>
+      <p>Nisab values update in real time</p>
+    </li>
+  
+    <li class="flex items-start gap-4">
+      <span class="dot-line last"></span>
+      <p>Calculate Zakat with confidence and peace of mind</p>
+    </li>
+  </ul>
+  
+  
+</div>
+    </section>
+
+    <section class="w-full max-w-6xl mx-auto px-4 py-10 bg-(--rose) mt-6">
+      <h2 class="text-center text-2xl md:text-3xl font-bold text-(--Twilight)">
+        How ZakaatiFy works
+      </h2>
+      <div class="mt-1 h-1 w-35 rounded-full bg-linear-to-r from-white to-(--Twilight) m-auto mb-4"></div>
+    
+      <div class="flex flex-col  lg:flex-row gap-8">
+        
+        <!-- Step 1 -->
+        <div class="group flex items-start gap-6 p-6 rounded-2xl shadow-lg bg-white">
+          <span class="text-(--Twilight) font-extrabold text-6xl lg:text-7xl leading-none lg:group-hover:text-8xl group-hover:transition-all duration-700 ease-in">
+            1
+          </span>
+          <p class="text-(--Twilight) text-base md:text-lg">
+            Select Madhhab, enter your financial details including cash, savings, gold, silver, and other zakatable assets.
+          </p>
+        </div>
+    
+        <!-- Step 2 -->
+        <div class="group flex items-start gap-6 bg-white p-6 rounded-2xl shadow-lg">
+          <span class="text-(--Twilight) font-extrabold text-6xl lg:text-7xl leading-none lg:group-hover:text-8xl group-hover:transition-all duration-700 ease-in">
+            2
+          </span>
+          <p class=" text-(--Twilight) text-base md:text-lg">
+            Zakaatify automatically checks your Nisab using real-time gold and silver prices.
+          </p>
+        </div>
+    
+        <!-- Step 3 -->
+        <div class="group flex items-start gap-6 bg-white p-6 rounded-2xl shadow-lg">
+          <span class="text-(--Twilight) font-extrabold text-6xl lg:text-7xl leading-none lg:group-hover:text-8xl group-hover:transition-all duration-700 ease-in">
+            3
+          </span>
+          <p class="text-(--Twilight) text-base md:text-lg">
+            Instantly see how much Zakaat you owe and distribute it with confidence and clarity.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="w-full max-w-4xl mx-auto px-4 py-12">
+      <!-- Section Header -->
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-(--Twilight)">
+          Frequently Asked Questions
+        </h2>
+        <div class="mt-2 h-1 w-30 rounded-full bg-linear-to-r from-white to-(--Twilight) m-auto"></div>
+
+        <p class="mt-3 text-gray-600 italic">
+          Clear answers to common Zakaat questions
+        </p>
+      </div>
+    
+      <!-- FAQ Container -->
+      <div class="space-y-4">
+    
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-xl shadow-md border border-gray-200">
+          <summary
+            class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 font-medium text-(--Twilight)"
+          >
+            <span>What is Zakaat?</span>
+            <span
+              class="transition-transform duration-300 group-open:rotate-180 bg-(--rose) rounded-full py-1 px-2.5 content-center"
+            >
+            <i class="fa-solid fa-caret-down fa-lg text-(--Twilight)" alt="dropdown-icon"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-4 text-gray-700 leading-relaxed">
+            Zakaat is an obligatory charity in Islam, required from Muslims who meet
+            the Nisab threshold. It purifies wealth and supports those in need.
+          </div>
+        </details>
+
+        <!--FAQ item-->
+        <details class="group bg-white rounded-xl shadow-md border border-gray-200">
+          <summary
+            class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 font-medium text-(--Twilight)"
+          >
+            <span>What is Nisab?</span>
+            <span
+              class="transition-transform duration-300 group-open:rotate-180 bg-(--rose) rounded-full py-1 px-2.5 content-center"
+            >
+            <i class="fa-solid fa-caret-down fa-lg text-(--Twilight)" alt="dropdown-icon"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-4 text-gray-700 leading-relaxed">
+            Nisab is the minimum amount of wealth a Muslim must own for a full lunar year before Zakat becomes obligatory.
+          </div>
+        </details>
+        
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-xl shadow-md border border-gray-200">
+          <summary
+            class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 font-medium text-(--Twilight)"
+          >
+            <span>How is Nisab calculated?</span>
+            <span
+              class="transition-transform duration-300 group-open:rotate-180 bg-(--rose) rounded-full py-1 px-2.5 content-center"
+            >
+            <i class="fa-solid fa-caret-down fa-lg text-(--Twilight)" alt="dropdown-icon"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-4 text-gray-700 leading-relaxed">
+            Nisab is calculated based on the current market value of gold or silver. The Hanafi madhhab uses silver, while others typically use gold.
+          </div>
+        </details>
+    
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-xl shadow-md border border-gray-200">
+          <summary
+            class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 font-medium text-(--Twilight)"
+          >
+            <span>When is Zakaat due?</span>
+            <span
+              class="transition-transform duration-300 group-open:rotate-180 bg-(--rose) rounded-full py-1 px-2.5 content-center"
+            >
+            <i class="fa-solid fa-caret-down fa-lg text-(--Twilight)" alt="dropdown-icon"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-4 text-gray-700 leading-relaxed">
+            Zakaat becomes due once your wealth remains above the Nisab threshold for
+            one full lunar year (Hawl).
+          </div>
+        </details>
+    
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-xl shadow-md border border-gray-200">
+          <summary
+            class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 font-medium text-(--Twilight)"
+          >
+            <span>Who can receive Zakaat?</span>
+            <span
+              class="transition-transform duration-300 group-open:rotate-180 bg-(--rose) rounded-full py-1 px-2.5 content-center"
+            >
+            <i class="fa-solid fa-caret-down fa-lg text-(--Twilight)" alt="dropdown-icon"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-4 text-gray-700 leading-relaxed">
+            Zakaat can be given to the poor, needy, those in debt, travelers in need,
+            and other eligible categories defined in the Qur’an.
+          </div>
+        </details>
+         <!-- FAQ Item -->
+         <details class="group bg-white rounded-xl shadow-md border border-gray-200">
+          <summary
+            class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 font-medium text-(--Twilight)"
+          >
+            <span>What's the difference between Zakaat and Sodaqoh?</span>
+            <span
+              class="transition-transform duration-300 group-open:rotate-180 bg-(--rose) rounded-full py-1 px-2.5 content-center"
+            >
+            <i class="fa-solid fa-caret-down fa-lg text-(--Twilight)" alt="dropdown-icon"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-4 text-gray-700 leading-relaxed">
+            Zakaat is an obligatory charity- (once you have the financial capability) with a set amount, while Sodaqoh is voluntary and given anytime in any amount.
+          </div>  
+        </details>
+      </div>
+    </section>
+    </main>
+  <!--Footer-->
+  <footer class="w-full bg-(--Twilight) mt-12 text-white">
+  
+    <!-- Main Footer Content -->
+    <div class="mx-auto max-w-6xl px-6 py-10 flex flex-col gap-10 lg:flex-row lg:justify-between">
+  
+      <!-- Brand -->
+      <div class="flex flex-col gap-4 lg:max-w-sm">
+        <div class="flex items-center gap-3">
+          <i class="fa-solid fa-hand-holding-hand fa-xl text-yellow-600"></i>
+          <h1 class="font-bold text-2xl tracking-tight" id="zakaatiFy">
+            ZakaatiFy
+          </h1>
+        </div>
+        <p class="text-sm leading-relaxed text-white/90">
+          Helping Muslims fulfil their Zakaat obligations with clarity, ease, and confidence, in accordance with Shariah principles.
+        </p>
+      </div>
+  
+      <!-- Quick Links -->
+      <div class="flex flex-col gap-3 text-white">
+        <span class="uppercase text-sm font-semibold tracking-wide">
+          Quick Links
+        </span>
+        <div class="h-1 w-12 rounded-full bg-linear-to-r from-white to-transparent"></div>
+  
+        <a href="index.html" class="hover:underline underline-offset-3">Home</a>
+        <a href="#" class="hover:underline underline-offset-3">Nisab</a>
+        <a href="#" class="hover:underline underline-offset-3">About</a>
+      </div>
+  
+      <!-- Contact -->
+      <div class="flex flex-col gap-3 text-white">
+        <span class="uppercase text-sm font-semibold tracking-wide">
+          Contact Us
+        </span>
+        <div class="h-1 w-12 rounded-full bg-linear-to-r from-white to-transparent"></div>
+  
+        <div class="flex gap-4 mt-2">
+          <a href="#" aria-label="Facebook">
+            <i class="fa-brands fa-square-facebook fa-xl hover:text-yellow-400 transition-colors"></i>
+          </a>
+          <a href="#" aria-label="Twitter / X">
+            <i class="fa-brands fa-x-twitter fa-xl hover:text-yellow-400 transition-colors"></i>
+          </a>
+          <a href="mailto:wasiu_mustapha96@yahoo.com" aria-label="Send us an email">
+            <i class="fa-regular fa-envelope fa-xl hover:text-yellow-400 transition-colors" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- Divider -->
+    <div class="border-t border-white/20"></div>
+  
+    <!-- Disclaimer -->
+    <div class="mx-auto max-w-6xl px-6 py-6 text-xs text-white/80 leading-relaxed">
+      <p class="text-center">
+        <strong>Disclaimer:</strong>  ZakaatiFy provides estimates based on user inputs and current market data. <strong>It is not a fatwa. </strong>For complex cases, consult a qualified scholar. </p>
+<div class="flex gap-2 mt-3 justify-center items-center"><i class="fa-regular fa-copyright"></i><p>ZakaatiFy. All rights reserved.</p></div>
+
+<script src="/Assets/zakaat.js"></script>
+</body>  
+</html>

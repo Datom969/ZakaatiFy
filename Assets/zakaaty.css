@@ -1,0 +1,82 @@
+@import "Tailwindcss";
+
+.navbar, #zakaatiFy {
+  font-family: "Farro", sans-serif;
+}
+body {
+    font-family: "Space Grotesk", sans-serif;;
+}
+#zakaatiFy{
+    font-weight: 700;
+}
+
+
+#quote {
+    color: white;
+    font-size: 14px;
+}
+.zakaat{
+    background: var(--stone);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+ i :not(.logo), .NisabCard, .cards{
+    color: var(--Twilight);
+}
+
+
+.logo{
+    color: var(--yellow)
+}
+
+.intro{
+    font-weight: 300;
+}
+.icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px ;
+}
+.cards{
+    background: white;
+    border-color: var(--Twilight);
+}
+
+@theme{
+    --Twilight: hsl(219, 59%, 21%);
+    --rose: hsl(217, 54%, 94%);
+    --stone: linear-gradient(90deg, hsl(0, 0%, 100%), hsl(218, 13%, 85%));
+    --yellow: hsl(43, 96%, 40%);
+
+
+
+}
+
+.dot-line {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    margin-top: 6px;
+    border-radius: 9999px;
+    background-color: var(--Twilight);
+    flex-shrink: 0;
+  }
+  
+  .dot-line::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 32px;
+    background-color: var(--Twilight);
+    opacity: 0.6;
+  }
+  
+  .dot-line.last::after {
+    display: none;
+  }
+  
