@@ -1,4 +1,4 @@
-//npx tailwindcss -i ./zakaaty.css -o ./output.css --watch
+
 const mobileNav =document.getElementById("mobileNav")
 document.getElementById("menuIcon").addEventListener("click", ()=>{
   mobileNav.classList.remove("translate-x-full")
